@@ -1,10 +1,11 @@
-import { Dashboard } from "../pages/dashboard/Dashboard";
+interface ContentProps {
+    children: React.ReactNode
+}
 
-export function Content() {
+export function Content(props: ContentProps) {
+    const { children } = props
+    
     return (
-        <div className="col p-4">
-            <h3>Bem-vindo(a) de volta, Dr. João!</h3>
-            <Dashboard />
-        </div>
+        <div>{children}</div>
     )
 }

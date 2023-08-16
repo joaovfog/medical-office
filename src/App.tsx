@@ -1,11 +1,12 @@
-import { Content, Sidebar } from "./components"
+import { Routes } from './routes'
 
 function App() {
   return (
     <div className="container-fluid">
       <div className="row flex-nowrap">
-        <Sidebar />
-        <Content />
+        <Routes />
+        {/* <Sidebar />
+        <Content /> */}
       </div>
     </div>
   )
