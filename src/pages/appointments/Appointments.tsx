@@ -2,7 +2,10 @@ export function Appointments() {
     return (
         <>
             <h3>Consultas</h3>
-            <input className="form-control" type="text" placeholder="Pesquisar consulta" />
+            <div className="d-flex align-items-center justify-content-between mt-3 mb-3">
+                <input className="form-control w-50" type="text" placeholder="Pesquisar consulta" />
+                <button type="button" className="btn btn-outline-primary">Adicionar</button>
+            </div>
             <table className="table table-hover">
                 <thead>
                     <tr>

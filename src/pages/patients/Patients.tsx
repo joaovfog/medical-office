@@ -2,6 +2,10 @@ export function Patients() {
     return (
         <>
             <h3>Pacientes</h3>
+            <div className="d-flex align-items-center justify-content-between mt-3 mb-3">
+                <input className="form-control w-50" type="text" placeholder="Pesquisar paciente" />
+                <button type="button" className="btn btn-outline-primary">Adicionar</button>
+            </div>
             <table className="table table-hover">
                 <thead>
                     <tr>
