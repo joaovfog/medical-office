@@ -3,7 +3,7 @@ export function Dashboard() {
         <>
             <h3>Bem-vindo(a) de volta, Dr. João!</h3>
             <div className="row mt-4">
-                <div className="col-6 col-md-4">
+                <div className="col--12 col-md-6 col-sm-12">
                     <div className="card">
                         <div className="card-body d-flex flex-column align-items-center">
                             <h5 className="card-title">N° agendamentos do dia</h5>
@@ -11,7 +11,7 @@ export function Dashboard() {
                         </div>
                     </div>
                 </div>
-                <div className="col-6 col-md-4">
+                <div className="col-12 col-md-6 col-sm-12">
                     <div className="card">
                         <div className="card-body d-flex flex-column align-items-center">
                             <h5 className="card-title">N° pacientes atendidos no dia</h5>
@@ -19,7 +19,7 @@ export function Dashboard() {
                         </div>
                     </div>
                 </div>
-                <div className="col-6 col-md-4">
+                <div className="col-12 col-md-6 col-sm-12 mt-4">
                     <div className="card">
                         <div className="card-body d-flex flex-column align-items-center">
                             <h5 className="card-title">Faturamento do dia</h5>

@@ -1,37 +1,61 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useEffect, useState } from "react"
+
+import { v4 as uuidv4 } from 'uuid'
+
+import { AppointmentDetails } from "."
+import { AddNewAppointmentModal } from "./components/AddNewAppointmentsModal"
+
 export function Appointments() {
+    const [appointments, setAppointments] = useState<any>([])
+
+    const getAppointments = JSON.parse(localStorage.getItem("appointments"))
+
+    const addNewAppointment = (appointment: any) => {
+        const id = uuidv4()
+        const newAppointment = { id, ...appointment }
+
+        setAppointments([...appointments, newAppointment])
+
+        console.log(newAppointment)
+
+        localStorage.setItem('appointments', JSON.stringify([...appointments, newAppointment]))
+    }
+
+    useEffect(() => {
+        if (getAppointments == null) {
+            setAppointments([])
+        } else {
+            setAppointments(getAppointments)
+        }
+    }, [])
+
     return (
         <>
             <h3>Consultas</h3>
-            <div className="d-flex align-items-center justify-content-between mt-3 mb-3">
-                <input className="form-control w-50" type="text" placeholder="Pesquisar consulta" />
-                <button type="button" className="btn btn-outline-primary">Adicionar</button>
+            <div className="row mb-3">
+                <div className="col-sm-8">
+                    <div className="d-flex justify-content-between gap-3">
+                        <input className="form-control" type="text" placeholder="Pesquisar consulta" />
+                        <i className="bi bi-filter"></i>
+                    </div>
+                </div>
+                <div className="col-sm-4">
+                    <button
+                        type="button"
+                        className="btn btn-outline-primary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#addNewAppointmentModal"
+                    >
+                        Adicionar
+                    </button>
+                </div>
             </div>
-            <table className="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">Código</th>
-                        <th scope="col">Nome do paciente</th>
-                        <th scope="col">Data/Hora</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>João Vitor Fogaça</td>
-                        <td>16/08/2023 - 13:30</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Laura Kornalewski</td>
-                        <td>16/08/2023 - 14:15</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Antônio Carlos</td>
-                        <td>16/08/2023 - 15:40</td>
-                    </tr>
-                </tbody>
-            </table>
+            {appointments.map((appointment: any) => (
+                <AppointmentDetails key={appointment.id} {...appointment} />
+            ))}
+
+            <AddNewAppointmentModal onSave={addNewAppointment} />
         </>
     )
 }

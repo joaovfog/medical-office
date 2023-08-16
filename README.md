@@ -11,5 +11,5 @@ Desenvolver as seguintes telas:
 [  ] - Listagem de consultas, podendo cadastrar uma nova.
    OBS: deve ser possível visualizar os detalhes de uma consulta.
 
-[  ] - Listagem de pacientes, podendo cadastrar um novo.
+[ x ] - Listagem de pacientes, podendo cadastrar um novo.
    OBS: deve ser possível visuzalizar os detalhes de um paciente.

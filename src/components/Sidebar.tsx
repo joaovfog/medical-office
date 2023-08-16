@@ -8,16 +8,18 @@ export function Sidebar() {
                 <ul className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li className="nav-item">
                         <a href="/" className="nav-link align-middle px-0">
-                            <i className="bi bi-clipboard-data text-white fs-4"></i> <span className="ms-1 d-none d-sm-inline text-white fs-5">Dashboard</span>
+                            <i className="bi bi-clipboard-data text-white fs-5"></i> <span className="ms-1 d-none d-sm-inline text-white fs-6">Dashboard</span>
                         </a>
                     </li>
                     <li>
                         <a href="/patients" className="nav-link px-0 align-middle">
-                            <i className="bi bi-people text-white fs-4"></i> <span className="ms-1 d-none d-sm-inline text-white fs-5">Pacientes</span></a>
+                            <i className="bi bi-people text-white fs-5"></i> <span className="ms-1 d-none d-sm-inline text-white fs-6">Pacientes</span>
+                        </a>
                     </li>
                     <li>
                         <a href="/appointments" className="nav-link px-0 align-middle">
-                            <i className="bi bi-calendar2-event text-white fs-4"></i> <span className="ms-1 d-none d-sm-inline text-white fs-5">Consultas</span></a>
+                            <i className="bi bi-calendar2-event text-white fs-5"></i> <span className="ms-1 d-none d-sm-inline text-white fs-6">Consultas</span>
+                        </a>
                     </li>
                 </ul>
                 <hr />

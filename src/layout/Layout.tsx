@@ -11,7 +11,7 @@ export function Layout(props: LayoutProps) {
         <div className="container-fluid">
             <div className="row flex-nowrap">
                 <Sidebar />
-                <div className="col p-5">
+                <div className="col p-4">
                     <Content>{children}</Content>
                 </div>
             </div>
