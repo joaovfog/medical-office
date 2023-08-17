@@ -8,7 +8,7 @@ Desenvolver as seguintes telas:
    - faturamento do dia;
    - agenda do dia e avisos/lembretes;
 
-[  ] - Listagem de consultas, podendo cadastrar uma nova.
+[ x ] - Listagem de consultas, podendo cadastrar uma nova.
    OBS: deve ser possível visualizar os detalhes de uma consulta.
 
 [ x ] - Listagem de pacientes, podendo cadastrar um novo.
