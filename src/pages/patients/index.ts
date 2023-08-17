@@ -1,3 +1,3 @@
 export * from './Patients'
-export * from './Patient'
 export * from './PatientDetails'
+export * from './PatientCard'

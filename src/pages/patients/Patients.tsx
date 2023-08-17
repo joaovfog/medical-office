@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { v4 as uuidv4 } from 'uuid'
 
 import { AddNewPatientsModal } from "./components/AddNewPatientsModal"
-import { PatientDetails } from "."
+import { PatientCard } from "."
 
 export function Patients() {
     const [patients, setPatients] = useState<any>([])
@@ -30,18 +30,21 @@ export function Patients() {
 
     return (
         <>
-            <h3>Pacientes</h3>
-            <div className="row mb-3">
-                <div className="col-sm-8">
-                    <div className="d-flex justify-content-between gap-3">
-                        <input className="form-control" type="text" placeholder="Pesquisar paciente" />
-                        <i className="bi bi-filter"></i>
-                    </div>
-                </div>
-                <div className="col-sm-4">
+            <h4>Pacientes</h4>
+            <div className="d-flex justify-content-between align-items-center mb-3 mt-4">
+                <div className="d-flex align-items-center gap-3 w-50">
+                    <input className="form-control" type="text" placeholder="Pesquisar paciente" />
                     <button
                         type="button"
-                        className="btn btn-outline-primary"
+                        className="btn rounded-circle"
+                    >
+                        <i className="bi bi-filter"></i>
+                    </button>
+                </div>
+                <div>
+                    <button
+                        type="button"
+                        className="btn btn-outline-primary btn-sm"
                         data-bs-toggle="modal"
                         data-bs-target="#addNewPatientModal"
                     >
@@ -49,8 +52,13 @@ export function Patients() {
                     </button>
                 </div>
             </div>
-            {patients.map((patient: any) => (
-                <PatientDetails key={patient.id} {...patient} />
+
+            {patients.length === 0 ? (
+                <div className="d-flex justify-content-center mt-5">
+                    <h5>Não há pacientes cadastrados, que tal adicionar um novo?</h5>
+                </div>
+            ) : patients.map((patient: any) => (
+                <PatientCard key={patient.id} {...patient} />
             ))}
 
             <AddNewPatientsModal onSave={addNewPatient} />

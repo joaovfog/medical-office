@@ -6,6 +6,10 @@ export function Content(props: ContentProps) {
     const { children } = props
     
     return (
-        <div>{children}</div>
+        <div
+            className="w-75"
+        >
+            {children}
+        </div>
     )
 }

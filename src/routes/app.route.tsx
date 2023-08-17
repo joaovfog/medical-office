@@ -1,12 +1,16 @@
 import { useState } from 'react'
-import { Route, Routes, useParams } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 
-import { Appointments, Dashboard, PatientDetails, Patients } from '../pages'
+import {
+    AppointmentDetails,
+    Appointments,
+    Dashboard,
+    PatientDetails,
+    Patients
+} from '../pages'
 
 export function AppRoutes() {
     const [patients, setPatients] = useState([])
-    const id = useParams()
-    console.log(id)
 
     return (
         <Routes>
@@ -14,6 +18,7 @@ export function AppRoutes() {
             <Route path='/patients' element={<Patients patients={patients} />} />
             <Route path='/patients/:id/details' element={<PatientDetails />} />
             <Route path='/appointments' element={<Appointments />} />
+            <Route path='/appointments/:id/details' element={<AppointmentDetails />} />
         </Routes>
     )
 }

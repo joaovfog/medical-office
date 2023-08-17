@@ -11,7 +11,7 @@ export function Layout(props: LayoutProps) {
         <div className="container-fluid">
             <div className="row flex-nowrap">
                 <Sidebar />
-                <div className="col p-4">
+                <div className="col d-flex justify-content-end mt-5 me-5">
                     <Content>{children}</Content>
                 </div>
             </div>

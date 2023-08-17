@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 
 import { v4 as uuidv4 } from 'uuid'
 
-import { AppointmentDetails } from "."
+import { AppointmentCard } from "."
 import { AddNewAppointmentModal } from "./components/AddNewAppointmentsModal"
 
 export function Appointments() {
@@ -33,17 +33,20 @@ export function Appointments() {
     return (
         <>
             <h3>Consultas</h3>
-            <div className="row mb-3">
-                <div className="col-sm-8">
-                    <div className="d-flex justify-content-between gap-3">
-                        <input className="form-control" type="text" placeholder="Pesquisar consulta" />
-                        <i className="bi bi-filter"></i>
-                    </div>
-                </div>
-                <div className="col-sm-4">
+            <div className="d-flex justify-content-between align-items-center mb-3 mt-4">
+                <div className="d-flex align-items-center gap-3 w-50">
+                    <input className="form-control" type="text" placeholder="Pesquisar consulta" />
                     <button
                         type="button"
-                        className="btn btn-outline-primary"
+                        className="btn rounded-circle"
+                    >
+                        <i className="bi bi-filter"></i>
+                    </button>
+                </div>
+                <div>
+                    <button
+                        type="button"
+                        className="btn btn-outline-primary btn-sm"
                         data-bs-toggle="modal"
                         data-bs-target="#addNewAppointmentModal"
                     >
@@ -51,8 +54,13 @@ export function Appointments() {
                     </button>
                 </div>
             </div>
-            {appointments.map((appointment: any) => (
-                <AppointmentDetails key={appointment.id} {...appointment} />
+
+            {appointments.length === 0 ? (
+                <div className="d-flex justify-content-center mt-5">
+                    <h5>Não há consultas cadastradas, que tal adicionar uma nova?</h5>
+                </div>
+            ) : appointments.map((patient: any) => (
+                <AppointmentCard key={patient.id} {...patient} />
             ))}
 
             <AddNewAppointmentModal onSave={addNewAppointment} />

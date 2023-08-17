@@ -2,14 +2,18 @@ import { useState } from "react"
 
 export function AddNewPatientsModal({ onSave }: any) {
     const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [cpf, setCpf] = useState('')
     const [phone, setPhone] = useState('')
 
     const onSubmit = (e: any) => {
         e.preventDefault()
 
-        onSave({ name, phone })
+        onSave({ name, phone, cpf, email })
 
         setName('')
+        setEmail('')
+        setCpf('')
         setPhone('')
     }
 
@@ -19,7 +23,7 @@ export function AddNewPatientsModal({ onSave }: any) {
                 <form onSubmit={onSubmit}>
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <h5 className="modal-title" id="exampleModalLabel">Cadastro de paciente</h5>
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
@@ -34,6 +38,26 @@ export function AddNewPatientsModal({ onSave }: any) {
                                 />
                             </div>
                             <div className="mb-3">
+                                <label htmlFor="email" className="form-label">E-mail</label>
+                                <input
+                                    type="email"
+                                    className="form-control"
+                                    id="email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                />
+                            </div>
+                            <div className="mb-3">
+                                <label htmlFor="cpf" className="form-label">CPF</label>
+                                <input
+                                    type="number"
+                                    className="form-control"
+                                    id="cpf"
+                                    value={cpf}
+                                    onChange={(e) => setCpf(e.target.value)}
+                                />
+                            </div>
+                            <div className="mb-3">
                                 <label htmlFor="phone" className="form-label">Telefone</label>
                                 <input
                                     type="tel"
@@ -45,8 +69,8 @@ export function AddNewPatientsModal({ onSave }: any) {
                             </div>
                         </div>
                         <div className="modal-footer justify-content-between">
-                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                            <button type="submit" className="btn btn-primary">Salvar</button>
+                            <button type="button" className="btn btn-secondary btn-sm" data-bs-dismiss="modal">Fechar</button>
+                            <button type="submit" className="btn btn-primary btn-sm">Salvar</button>
                         </div>
                     </div>
                 </form>
