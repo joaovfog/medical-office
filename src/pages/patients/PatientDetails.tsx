@@ -36,13 +36,13 @@ export function PatientDetails() {
                             />
                         </button>
                         <div
-                            className="text-justify"
+                            className="text-justify mb-1"
                             style={{
                                 fontSize: 24,
                                 fontWeight: 500
                             }}
                         >
-                            Detalhes do(a) paciente {patient.name}
+                            Paciente {patient.name}
                         </div>
                     </div>
                     <div
@@ -53,21 +53,21 @@ export function PatientDetails() {
                     >
                         <div className="card-body">
                             <div className="row">
-                                <div className="col">
+                                <div className="col-sm-12 col-md-6">
                                     <h6 className="card-title mb-2 font-weight-bold">Nome paciente</h6>
                                     <h5 className="card-subtitle mb-3 text-muted">{patient?.name}</h5>
                                 </div>
-                                <div className="col">
+                                <div className="col-sm-12 col-md-6">
                                     <h6 className="card-title mb-2 font-weight-bold">CPF</h6>
                                     <h5 className="card-subtitle mb-3 text-muted">{cnpjCpfMask(patient?.cpf)}</h5>
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="col">
+                                <div className="col-sm-12 col-md-6">
                                     <h6 className="card-title mb-2 font-weight-bold">E-mail</h6>
                                     <h5 className="card-subtitle mb-3 text-muted">{patient?.email}</h5>
                                 </div>
-                                <div className="col">
+                                <div className="col-sm-12 col-md-6">
                                     <h6 className="card-title mb-2 font-weight-bold">Telefone</h6>
                                     <h5 className="card-subtitle mb-3 text-muted">{phoneMask(patient?.phone)}</h5>
                                 </div>
