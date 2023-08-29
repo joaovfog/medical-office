@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useNavigate, useParams } from 'react-router-dom'
+
 import { phoneMask } from '../../utils/phone'
 import { cnpjCpfMask } from '../../utils/cnpjCpf'
 
@@ -17,7 +18,7 @@ export function PatientDetails() {
     return (
         <>
             {patientDetails.map((patient: any) => (
-                <div>
+                <div key={patient?.id}>
                     <div className="d-flex align-items-center">
                         <button
                             type="button"

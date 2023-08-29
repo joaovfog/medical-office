@@ -4,7 +4,7 @@ import { toast } from "react-toastify"
 export function AddNewAppointmentModal({ onSave }: any) {
     const patients = JSON.parse(localStorage.getItem("patients"))
 
-    const [selectedPatient, setSelectedPatient] = useState(patients[0].name)
+    const [selectedPatient, setSelectedPatient] = useState(patients ? patients[0].name : '')
     const [patientsName, setPatientsName] = useState('')
     const [observation, setObservation] = useState('')
     const [price, setPrice] = useState('')

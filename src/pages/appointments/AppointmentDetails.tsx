@@ -19,7 +19,7 @@ export function AppointmentDetails() {
     return (
         <>
             {appointmentDetails.map((appointment: any) => (
-                <div>
+                <div key={appointment?.id}>
                     <div className="d-flex align-items-center">
                         <button
                             type="button"
@@ -46,23 +46,23 @@ export function AppointmentDetails() {
                     >
                         <div className="card-body">
                             <div className="row">
-                                <div className="col">
+                                <div className="col-sm-12 col-md-6">
                                     <h6 className="card-title mb-2 font-weight-bold">Nome paciente</h6>
                                     <h5 className="card-subtitle mb-3 text-muted">{appointment?.patientsName}</h5>
                                 </div>
-                                <div className="col">
+                                <div className="col-sm-12 col-md-6">
                                     <h6 className="card-title mb-2 font-weight-bold">Data</h6>
                                     <h5 className="card-subtitle mb-3 text-muted">{formatDate(appointment?.date)}</h5>
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="col">
+                                <div className="col-sm-12 col-md-6">
                                     <h6 className="card-title mb-2 font-weight-bold">Preço</h6>
                                     <h5 style={{ color: '#2dc034' }} className="card-subtitle mb-3">
                                         {formatCurrency(appointment?.price)}
                                     </h5>
                                 </div>
-                                <div className="col">
+                                <div className="col-sm-12 col-md-6">
                                     <h6 className="card-title mb-2 font-weight-bold">Observação</h6>
                                     <h5 className="card-subtitle mb-3 text-muted">{appointment?.observation}</h5>
                                 </div>
